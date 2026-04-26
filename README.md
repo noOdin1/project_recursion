@@ -12,6 +12,7 @@ The activities performed:<br>
 - Init npm and import testing module, jest<br>
 - Added scripts to test and run watch using npm<br>
 -
+
 Included babel package, to enable import/export directive: <br>
 
 - npm install --save-dev @babel/preset-env<br>
