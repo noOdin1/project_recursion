@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Recursion Techniques for Fibonacci and Merge Sort",
   "main": "fibonacci.js",
+  "type": "module",
   "scripts": {
     "test": "jest",
     "watch": "jest --watch --verbose --coverage *.js"
