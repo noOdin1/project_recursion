@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/noOdin1/project_recursion#readme",
   "devDependencies": {
+    "@babel/preset-env": "^7.29.2",
     "jest": "^30.3.0"
   }
 }
