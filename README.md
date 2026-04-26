@@ -17,3 +17,6 @@ Included babel package, to enable import/export directive: <br>
 - npm install --save-dev @babel/preset-env<br>
 - babel script included, babel.config.js
 
+NOTE: Important to note that the fibonacci sequence starts with <br>
+1, 1, 2, 3, 5, 8..etc, this means that previous fibonacci sequence needs<br>
+correction.
