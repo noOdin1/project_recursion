@@ -4,3 +4,5 @@
 const fibonacciGrp = {
 };
 
+// export { fibonacciGrp };
+module.exports = fibonacciGrp;
