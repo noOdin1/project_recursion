@@ -1,0 +1,29 @@
+{
+  "name": "project_recursion",
+  "version": "1.0.0",
+  "description": "Recursion Techniques for Fibonacci and Merge Sort",
+  "main": "fibonacci.js",
+  "scripts": {
+    "test": "jest",
+    "watch": "jest --watch --verbose --coverage *.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/noOdin1/project_recursion.git"
+  },
+  "keywords": [
+    "recursion",
+    "fibonacci",
+    "merge",
+    "sort"
+  ],
+  "author": "noOdin1",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/noOdin1/project_recursion/issues"
+  },
+  "homepage": "https://github.com/noOdin1/project_recursion#readme",
+  "devDependencies": {
+    "jest": "^30.3.0"
+  }
+}
