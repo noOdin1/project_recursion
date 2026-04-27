@@ -36,3 +36,9 @@ Objectives:
 2. [done] Code for getting the nth term of fibonacci sequence using recursive method<br>
 3. [done] Test for fibonacci iterative method<br>
 4. [done] Test for fibonacci recursive method<br>
+
+Amendments:
+
+1. The output from the fibonacci series must be an array of fibonacci sequence to the<br>
+   nth term. <br>
+   NOTE: This time '0' is part of the sequence. So, at the 8th term of this sequence is '13'.<br>
