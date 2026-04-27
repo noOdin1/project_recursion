@@ -12,6 +12,22 @@ const fibonacciGrp = {
         );
   },
 
+  // Using internal function with recursion to generate fibonacci series in an array
+  fibsRec: (num) => {
+    if (num < 0) return undefined;
+    let tmpArr = [];
+
+    const fib = (x) => {
+      if (x < 0) return undefined;
+      return x < 2 ? Number(x) : Number(fib(x - 1) + fib(x - 2));
+    };
+
+    Array.from({ length: num }, (_, i) => i).forEach((ele) => {
+      tmpArr.push(fib(ele));
+    });
+
+    return tmpArr;
+  },
 
   fibs: (num) => {
     if (num < 0) return "OOPS";
