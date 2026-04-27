@@ -78,3 +78,27 @@ describe("fibonacci nth term using recursion", () => {
   });
 });
 
+describe("fibonacci sequence using recursion", () => {
+  test("fibonacci sequence to the 4th term is [0, 1, 1, 2]", () => {
+    expect(fibonacciGrp.fibsRec(4)).toEqual([0, 1, 1, 2]);
+  });
+  test("doesn't accept negatives", () => {
+    expect(fibonacciGrp.fibsRec(-25)).toBe(undefined);
+  });
+  test("0th fibonacci seqeunce is 0", () => {
+    expect(fibonacciGrp.fibsRec(0)).toEqual([]);
+  });
+  test("DOES accept strings, sequence to the first term is [ 0 ]", () => {
+    expect(fibonacciGrp.fibsRec("1")).toEqual([0]);
+  });
+  test("DOES accept strings,sequence to the 2nd term is [0, 1]", () => {
+    expect(fibonacciGrp.fibsRec("2")).toEqual([0, 1]);
+  });
+  test("DOES accept strings, sequence to the 8th term is [0, 1, 1, 2, 3, 5, 8, 13]", () => {
+    expect(fibonacciGrp.fibsRec("8")).toEqual([0, 1, 1, 2, 3, 5, 8, 13]);
+  });
+  test("Sequence to the 3rd term is [0, 1, 1]", () => {
+    expect(fibonacciGrp.fibsRec(3)).toEqual([0, 1, 1]);
+  });
+});
+
