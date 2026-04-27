@@ -29,6 +29,17 @@ const fibonacciGrp = {
     return tmpArr;
   },
 
+  // Calling a recursive function within this group
+  fibsRecAlt01: (num) => {
+    if (num < 0) return undefined;
+    let tmpArr = [];
+    // Create an array of number ranging from 0 to 'num-1'
+    Array.from({ length: num }, (_, i) => i).forEach((ele) => {
+      tmpArr.push(fibonacciGrp.fibonacciTerm(ele));
+    });
+    return tmpArr;
+  },
+
   fibs: (num) => {
     if (num < 0) return "OOPS";
     if (num == 0 || num == "0") return 0;
