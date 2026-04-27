@@ -56,6 +56,23 @@ const fibonacciGrp = {
     return tmpArr;
   },
 
+  // Using Z-combinator, w/o using an external 'const fib'
+  fibsRecAlt03: (num) => {
+    if (num < 0) return undefined;
+    let tmpArr = [];
+
+    Array.from({ length: num }, (_, i) => i).forEach((ele) => {
+      // tmpArr.push(Z((k) => (n) => (n <= 1 ? n : k(n - 1) + k(n - 2)))(ele));
+      tmpArr.push(
+        ((g) => ((x) => g((v) => x(x)(v)))((x) => g((v) => x(x)(v))))(
+          (k) => (n) => (n <= 1 ? n : k(n - 1) + k(n - 2)),
+        )(ele),
+      );
+    });
+
+    return tmpArr;
+  },
+
   fibs: (num) => {
     if (num < 0) return "OOPS";
     if (num == 0 || num == "0") return 0;
