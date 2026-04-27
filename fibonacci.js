@@ -1,6 +1,10 @@
 #!/usr/bin/env node
 /* fibonacci.js */
 
+// source: https://github.com/alexpozdnyakof/y-combinator/blob/main/index.js
+const Y = (g) => ((x) => x(x))((x) => g((y) => x(x)(y)));
+const Z = (g) => ((x) => g((v) => x(x)(v)))((x) => g((v) => x(x)(v)));
+
 const fibonacciGrp = {
   fibonacciTerm: (num) => {
     if (num < 0) return undefined;
