@@ -12,7 +12,6 @@ const fibonacciGrp = {
         );
   },
 
-  // console.log("The 8th term in the fibonacci series is " + fibsRec(8));
 
   fibs: (num) => {
     if (num < 0) return "OOPS";
