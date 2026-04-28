@@ -126,7 +126,7 @@ describe("fibonacci sequence using recursion, testing fibsRecAlt01", () => {
   });
 });
 
-describe("fibonacci sequence using recursion, testing fibsRecAlt02", () => {
+describe("fibonacci sequence using recursion (Y combinator), testing fibsRecAlt02", () => {
   test("fibonacci sequence to the 4th term is [0, 1, 1, 2]", () => {
     expect(fibonacciGrp.fibsRecAlt02(4)).toEqual([0, 1, 1, 2]);
   });
@@ -150,7 +150,7 @@ describe("fibonacci sequence using recursion, testing fibsRecAlt02", () => {
   });
 });
 
-describe("fibonacci sequence using recursion, testing fibsRecAlt03", () => {
+describe("fibonacci sequence using recursion (Z combinator), testing fibsRecAlt03", () => {
   test("fibonacci sequence to the 4th term is [0, 1, 1, 2]", () => {
     expect(fibonacciGrp.fibsRecAlt03(4)).toEqual([0, 1, 1, 2]);
   });
@@ -171,5 +171,29 @@ describe("fibonacci sequence using recursion, testing fibsRecAlt03", () => {
   });
   test("Sequence to the 3rd term is [0, 1, 1]", () => {
     expect(fibonacciGrp.fibsRecAlt03(3)).toEqual([0, 1, 1]);
+  });
+});
+
+describe("fibonacci sequence using recursion (IIFE), testing fibsRecAlt04", () => {
+  test("fibonacci sequence to the 4th term is [0, 1, 1, 2]", () => {
+    expect(fibonacciGrp.fibsRecAlt04(4)).toEqual([0, 1, 1, 2]);
+  });
+  test("doesn't accept negatives", () => {
+    expect(fibonacciGrp.fibsRecAlt04(-25)).toBe(undefined);
+  });
+  test("0th fibonacci seqeunce is 0", () => {
+    expect(fibonacciGrp.fibsRecAlt04(0)).toEqual([]);
+  });
+  test("DOES accept strings, sequence to the first term is [ 0 ]", () => {
+    expect(fibonacciGrp.fibsRecAlt04("1")).toEqual([0]);
+  });
+  test("DOES accept strings,sequence to the 2nd term is [0, 1]", () => {
+    expect(fibonacciGrp.fibsRecAlt04("2")).toEqual([0, 1]);
+  });
+  test("DOES accept strings, sequence to the 8th term is [0, 1, 1, 2, 3, 5, 8, 13]", () => {
+    expect(fibonacciGrp.fibsRecAlt04("8")).toEqual([0, 1, 1, 2, 3, 5, 8, 13]);
+  });
+  test("Sequence to the 3rd term is [0, 1, 1]", () => {
+    expect(fibonacciGrp.fibsRecAlt04(3)).toEqual([0, 1, 1]);
   });
 });
