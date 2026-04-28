@@ -50,3 +50,11 @@ The following is how to start an 'npm test' to watch only one file:<br>
 <pre>
 npm test -- merge_sort_recursion.test.js --watch
 </pre>
+
+Another tool to add to the current development process is using 'node':<br>
+
+<pre>
+   node --watch fibonacci.cjs 
+</pre>
+
+This will allow 'node' to execute fibonacci.cjs anytime it detects that there is a change in the file.<br>
