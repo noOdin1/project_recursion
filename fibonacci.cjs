@@ -117,9 +117,9 @@ const fibonacciGrp = {
 
 // This file "fibonacci.cjs" and the lines below are for testing 'node' cli
 // commands. The way to have this file executed in cli:
-//   npm fibonacci.cjs
+//   node fibonacci.cjs
 // To run the "node" with 'watch':
-//   npm --watch fibonacci.cjs
+//   node --watch fibonacci.cjs
 console.log(
   "The fibonacci sequence to 8th term using iterative method: " +
     fibonacciGrp.fibs(8),
@@ -131,6 +131,8 @@ console.log(
 );
 
 console.dir(fibonacciGrp.fibsRec(10));
+
+console.dir(fibonacciGrp.fibsRecAlt03(5));
 
 // export { fibonacciGrp };
 module.exports = fibonacciGrp;
