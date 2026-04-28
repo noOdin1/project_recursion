@@ -54,7 +54,28 @@ npm test -- merge_sort_recursion.test.js --watch
 Another tool to add to the current development process is using 'node':<br>
 
 <pre>
-   node --watch fibonacci.cjs 
+   node --watch fibonacci.cjs <br>
 </pre>
 
 This will allow 'node' to execute fibonacci.cjs anytime it detects that there is a change in the file.<br>
+
+The following files has this at the top of the file:<br>
+
+<pre>
+   #!/usr/bin/env node
+</pre>
+
+The files have also been enabled for execution via:<br>
+
+<pre>
+  chmod u+x fibonacci.js merge_sort_recursion.js<br>
+</pre>
+
+This will allow the scripts to be executed via 'node' on the cli,<br>
+
+<pre>
+  ./fibonacci.js
+</pre>
+
+NOTE: Only commands such as console.log() or console.dir() will print out to the console at the<br>
+moment.<br>
