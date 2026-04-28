@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 /* merge_sort_recursion.js */
 
 const merge_sort = (arg) => {
@@ -22,5 +23,7 @@ const merge_sort = (arg) => {
     return retLs.concat(retRs).sort((a, b) => a - b);
   }
 };
+
+console.log(merge_sort([3, 4, 8, 9, 1, 6, 2, 7, 5]));
 
 export { merge_sort };
