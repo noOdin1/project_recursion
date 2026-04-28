@@ -65,16 +65,23 @@ const fibonacciGrp = {
     if (num < 0) return undefined;
     let tmpArr = [];
 
-    Array.from({ length: num }, (_, i) => i).forEach((ele) => {
-      // tmpArr.push(Z((k) => (n) => (n <= 1 ? n : k(n - 1) + k(n - 2)))(ele));
-      tmpArr.push(
-        ((g) => ((x) => g((v) => x(x)(v)))((x) => g((v) => x(x)(v))))(
-          (k) => (n) => (n <= 1 ? n : k(n - 1) + k(n - 2)),
-        )(ele),
-      );
-    });
+    // Array.from({ length: num }, (_, i) => i).forEach((ele) => {
+    //   // tmpArr.push(Z((k) => (n) => (n <= 1 ? n : k(n - 1) + k(n - 2)))(ele));
+    //   tmpArr.push(
+    //     ((g) => ((x) => g((v) => x(x)(v)))((x) => g((v) => x(x)(v))))(
+    //       (k) => (n) => (n <= 1 ? n : k(n - 1) + k(n - 2)),
+    //     )(ele),
+    //   );
+    // });
+    //
+    // return tmpArr;
 
-    return tmpArr;
+    return Array.from({ length: num }, (_, i) => i).map((ele) => {
+      // tmpArr.push(Z((k) => (n) => (n <= 1 ? n : k(n - 1) + k(n - 2)))(ele));
+      return ((g) => ((x) => g((v) => x(x)(v)))((x) => g((v) => x(x)(v))))(
+        (k) => (n) => (n <= 1 ? n : k(n - 1) + k(n - 2)),
+      )(ele);
+    });
   },
 
   // Using IIFE
