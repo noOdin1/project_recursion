@@ -77,6 +77,19 @@ const fibonacciGrp = {
     });
   },
 
+  fibsRecAlt04: (num) => {
+    if (num < 0) return undefined;
+
+    return Array.from({ length: num }, (_, i) => i).map((ele) => {
+      return ((fn, n) => {
+        return fn(fn, n);
+      })((self, n) => {
+        if (n <= 1) return n;
+        return self(self, n - 1) + self(self, n - 2);
+      }, ele);
+    });
+  },
+
   fibs: (num) => {
     if (num < 0) return undefined;
     if (num == 0 || num == "0") return 0;

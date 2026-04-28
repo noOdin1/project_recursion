@@ -79,21 +79,18 @@ const fibonacciGrp = {
   },
 
   // Using IIFE
-  // fibsRecAlt02: (num) => {
-  //   if (num < 0) return undefined;
-  //   let tmpArr = [];
-  //
-  //   Array.from({ length: num }, (_, i) => i).forEach((ele) => {
-  //     tmpArr.push( (f) => {
-  //                      f(ele);
-  //                })(function fibx(x) {
-  //                    if (x < 0) return undefined;
-  //                    return x < 2 ? Number(x) : Number(fibx(x - 1) + fibx(x - 2));
-  //                  })
-  //     );
-  //   });
-  //   return tmpArr;
-  // },
+  fibsRecAlt04: (num) => {
+    if (num < 0) return undefined;
+
+    return Array.from({ length: num }, (_, i) => i).map((ele) => {
+      return ((fn, n) => {
+        return fn(fn, n);
+      })((self, n) => {
+        if (n <= 1) return n;
+        return self(self, n - 1) + self(self, n - 2);
+      }, ele);
+    });
+  },
 
   fibs: (num) => {
     if (num < 0) return undefined;
@@ -128,5 +125,6 @@ console.dir(fibonacciGrp.fibsRec(10));
 
 console.dir(fibonacciGrp.fibsRecAlt03(5));
 
+console.dir(fibonacciGrp.fibsRecAlt04(7));
 // export { fibonacciGrp };
 module.exports = fibonacciGrp;
