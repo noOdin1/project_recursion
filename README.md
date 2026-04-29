@@ -80,8 +80,15 @@ This will allow the scripts to be executed via 'node' on the cli,<br>
 NOTE: Only commands such as console.log() or console.dir() will print out to the console at the<br>
 moment.<br>
 
-The following will allow access to functions in the file:
+The following will allow access to functions in the file:<br>
 
 <pre>
   node -e "require('./merge_sort_recursion.js').merge_sort([4,6,5,1,7,8,9,2,3])"
+</pre>
+
+The command only works if the function is exported via:<br>
+
+<pre>
+  export { merge_sort }; /* Using babel */
+  module.exports = merge_sort; /* Older method */
 </pre>
