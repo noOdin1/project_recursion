@@ -51,6 +51,25 @@ The following is how to start an 'npm test' to watch only one file:<br>
 npm test -- merge_sort_recursion.test.js --watch
 </pre>
 
+Another possible combination is to use the test section's name:<br>
+
+<pre>
+   npm test -- t "fibonacci sequence using recursion (IIFE), testing fibsRecAlt04"
+</pre>
+
+which will test the named 'describe' section. This will add to the filters during<br>
+jest testing run. If you want to be more specific, then:
+
+<pre>
+   npm test -- t "fibonacci sequence using recursion (IIFE), testing fibsRecAlt04" fibonacci.test.js --watch
+</pre>
+
+which will produce this output during test:
+
+<pre>
+   Active Filters: filename fibonacci.test.js, test name /fibonacci sequence using recursion (IIFE), testing fibsRecAlt04/
+</pre>
+
 Another tool to add to the current development process is using 'node':<br>
 
 <pre>
