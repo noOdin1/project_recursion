@@ -58,16 +58,16 @@ Another possible combination is to use the test section's name:<br>
 </pre>
 
 which will test the named 'describe' section. This will add to the filters during<br>
-jest testing run. If you want to be more specific, then:
+jest testing run. If you want to be more specific, then (fileToTest.js first, describe section):
 
 <pre>
-   npm test -- t "fibonacci sequence using recursion (IIFE), testing fibsRecAlt04" fibonacci.test.js --watch
+   npm test -- fibonacci.test.js -t "fibonacci sequence using iterative method, testing fibsIterative02" --watch
 </pre>
 
 which will produce this output during test:
 
 <pre>
-   Active Filters: filename fibonacci.test.js, test name /fibonacci sequence using recursion (IIFE), testing fibsRecAlt04/
+   Active Filters: filename fibonacci.test.js, test name /fibonacci sequence using iterative method, testing fibsIterative02/
 </pre>
 
 Another tool to add to the current development process is using 'node':<br>
