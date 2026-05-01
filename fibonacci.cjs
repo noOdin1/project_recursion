@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 /* fibonacci.js */
+const process = require("process");
+// console.log(process.argv);
 
 // source: https://github.com/alexpozdnyakof/y-combinator/blob/main/index.js
 const Y = (g) => ((x) => x(x))((x) => g((y) => x(x)(y)));
