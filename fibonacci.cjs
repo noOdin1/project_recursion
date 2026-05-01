@@ -182,4 +182,4 @@ const fibonacciGrp = {
 //   module.exports = { fibonacciGrp };
 
 // export { fibonacciGrp };
-module.exports = fibonacciGrp;
+module.exports = { fibonacciGrp };
