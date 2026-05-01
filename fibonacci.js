@@ -133,6 +133,22 @@ const fibonacciGrp = {
     });
   },
 
+  /* Fibonacci using Iterative method variation 2 */
+  fibsIterative02: (num) => {
+    if (num < 0) return undefined;
+    if (num == 0 || num == "0") return 0;
+    if (num == 1 || num == "1") return [0];
+
+    let fibArray = []; /* Memory for the Array.map function call */
+    return Array.from({ length: num }, (_, i) => {
+      if (i <= 1) {
+        fibArray.push(i);
+        return i;
+      }
+      fibArray.push(fibArray[i - 1] + fibArray[i - 2]);
+      return fibArray[fibArray.length - 1];
+    });
+  },
 };
 
 // export { fibonacciGrp };
