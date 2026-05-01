@@ -183,5 +183,19 @@ const fibonacciGrp = {
 // The requirement for this is to have the following export directive:
 //   module.exports = { fibonacciGrp };
 
+// Testing 'process' module
+// Now you can get the answer from anyone of the functions above,
+//   node fibonacci.cjs fibsIterative03 15
+const f2Exe = process.argv[2];
+const arg4Exe = process.argv.slice(3);
+
+console.log("Arguments received: ");
+console.dir(process.argv);
+if (fibonacciGrp[f2Exe]()) {
+  console.log(fibonacciGrp[f2Exe](...arg4Exe));
+} else {
+  console.log("Function not found");
+}
+
 // export { fibonacciGrp };
 module.exports = { fibonacciGrp };
