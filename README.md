@@ -111,3 +111,14 @@ The command only works if the function is exported via:<br>
   export { merge_sort }; /* Using babel */
   module.exports = merge_sort; /* Older method */
 </pre>
+
+fibonacci.cjs has been modified to include the following:<br>
+
+- 1. The ability to call each function in the file from the cli<br>
+  <pre> 
+     node -e "console.log(require('./fibonacci.cjs').fibonacciGrp.fibsIterative03(32))"
+  </pre>
+- 2. Test out the functions and measure the time it take to process the event in cli<br>
+  <pre> 
+     node fibonacci.cjs fibsRec 20  
+  </pre>
