@@ -181,15 +181,5 @@ const fibonacciGrp = {
 // The requirement for this is to have the following export directive:
 //   module.exports = { fibonacciGrp };
 
-console.log(
-  "The fibonacci sequence to 8th term using recursive method: " +
-    fibonacciGrp.fibsRec(8),
-);
-
-console.dir(fibonacciGrp.fibsRec(10));
-
-console.dir(fibonacciGrp.fibsRecAlt03(5));
-
-console.dir(fibonacciGrp.fibsRecAlt04(7));
 // export { fibonacciGrp };
 module.exports = fibonacciGrp;
