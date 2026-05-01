@@ -149,6 +149,26 @@ const fibonacciGrp = {
       return fibArray[fibArray.length - 1];
     });
   },
+
+  fibsIterative03: (num) => {
+    if (num < 0) return undefined;
+    if (num == 0 || num == "0") return 0;
+    if (num == 1 || num == "1") return [0];
+
+    /* Memory storage for the Array.map anonymous function */
+    let minusOne = 1;
+    let minusTwo = 0;
+    return Array.from({ length: num }, (_, i) => {
+      if (i <= 1) {
+        // Array destructuring notation
+        [minusOne, minusTwo] = [i, minusOne];
+        return i;
+      }
+      // Use Javascript's modern Array destructuring notation
+      [minusOne, minusTwo] = [minusOne + minusTwo, minusOne];
+      return minusOne;
+    });
+  },
 };
 
 // export { fibonacciGrp };
