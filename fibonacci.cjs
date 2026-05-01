@@ -176,10 +176,10 @@ const fibonacciGrp = {
 //   node fibonacci.cjs
 // To run the "node" with 'watch':
 //   node --watch fibonacci.cjs
-console.log(
-  "The fibonacci sequence to 8th term using iterative method: " +
-    fibonacciGrp.fibs(8),
-);
+// To execute the functions within this file:
+//   node -e "console.log(require('./fibonacci.cjs').fibonacciGrp.fibsIterative03(32))"
+// The requirement for this is to have the following export directive:
+//   module.exports = { fibonacciGrp };
 
 console.log(
   "The fibonacci sequence to 8th term using recursive method: " +
