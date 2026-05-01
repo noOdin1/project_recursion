@@ -183,19 +183,45 @@ const fibonacciGrp = {
 // The requirement for this is to have the following export directive:
 //   module.exports = { fibonacciGrp };
 
-// Testing 'process' module
-// Now you can get the answer from anyone of the functions above,
-//   node fibonacci.cjs fibsIterative03 15
-const f2Exe = process.argv[2];
-const arg4Exe = process.argv.slice(3);
+// console.dir(process.argv);
+// console.log("Argument length: " + process.argv.length);
+(() => {
+  // Testing 'process' module
+  // Now you can get the answer from anyone of the functions above,
+  //   node fibonacci.cjs fibsIterative03 15
+  const f2Exe = process.argv[2];
+  const arg4Exe = process.argv.slice(3);
 
-console.log("Arguments received: ");
-console.dir(process.argv);
-if (fibonacciGrp[f2Exe]()) {
-  console.log(fibonacciGrp[f2Exe](...arg4Exe));
-} else {
-  console.log("Function not found");
-}
+  console.log("Arguments received: ");
+  console.dir(process.argv);
+
+  const performance01 = () => {
+    const startTime = performance.now(); /* Mark start of time */
+    console.log(fibonacciGrp[f2Exe](...arg4Exe));
+    const endTime = performance.now(); /* Mark end of time  */
+    console.log(
+      `Execution time (using 'perfomance.now())': ${endTime - startTime} ms`,
+    );
+  };
+
+  const performance02 = () => {
+    const startTimeNode = process.hrtime.bigint(); /* Mark start of time */
+    console.log(fibonacciGrp[f2Exe](...arg4Exe));
+    endTimeNode = process.hrtime.bigint(); /* Mark end of time  */
+    console.log(
+      `Execution time (using 'process.hrtime.bigint())': ${Number(endTimeNode - startTimeNode) / 1_000_000} ms`,
+    );
+  };
+
+  if (process.argv.length > 1) {
+    if (fibonacciGrp[f2Exe]()) {
+      performance02();
+      performance01();
+    } else {
+      console.log("Function not found");
+    }
+  }
+})();
 
 // export { fibonacciGrp };
 module.exports = { fibonacciGrp };
