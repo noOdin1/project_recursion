@@ -118,8 +118,8 @@ const fibonacciGrp = {
     if (num == 1 || num == "1") return [0];
 
     /* Memory storage for the Array.map anonymous function */
-    let minusOne = 0;
-    let minusTwo = 1;
+    let minusOne = 1;
+    let minusTwo = 0;
     return Array.from({ length: num }, (_, i) => {
       if (i <= 1) {
         minusTwo = minusOne;
