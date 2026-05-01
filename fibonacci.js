@@ -110,6 +110,29 @@ const fibonacciGrp = {
     // fibArray.splice(0, 1); // removing the first term if fibonacci sequence starts with 1, 1, 2, 3, 5, 8...
     return fibArray;
   },
+
+  /* Fibonacci using Iterative method variation 1 */
+  fibsIterative01: (num) => {
+    if (num < 0) return undefined;
+    if (num == 0 || num == "0") return 0;
+    if (num == 1 || num == "1") return [0];
+
+    /* Memory storage for the Array.map anonymous function */
+    let minusOne = 0;
+    let minusTwo = 1;
+    return Array.from({ length: num }, (_, i) => {
+      if (i <= 1) {
+        minusTwo = minusOne;
+        minusOne = i;
+        return i;
+      }
+      let tmpVal = minusOne + minusTwo;
+      minusTwo = minusOne;
+      minusOne = tmpVal;
+      return tmpVal;
+    });
+  },
+
 };
 
 // export { fibonacciGrp };
