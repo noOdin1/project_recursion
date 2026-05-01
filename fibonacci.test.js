@@ -94,6 +94,32 @@ describe("fibonacci sequence using iterative method, testing fibsIterative02", (
   });
 });
 
+describe("fibonacci sequence using iterative method, testing fibsIterative03", () => {
+  test("fibonacci sequence to the 4th term is [0, 1, 1, 2]", () => {
+    expect(fibonacciGrp.fibsIterative03(4)).toEqual([0, 1, 1, 2]);
+  });
+  test("doesn't accept negatives", () => {
+    expect(fibonacciGrp.fibsIterative03(-25)).toBe(undefined);
+  });
+  test("0th fibonacci seqeunce is 0", () => {
+    expect(fibonacciGrp.fibsIterative03(0)).toEqual(0);
+  });
+  test("DOES accept strings, sequence to the first term is [ 0 ]", () => {
+    expect(fibonacciGrp.fibsIterative03("1")).toEqual([0]);
+  });
+  test("DOES accept strings,sequence to the 2nd term is [0, 1]", () => {
+    expect(fibonacciGrp.fibsIterative03("2")).toEqual([0, 1]);
+  });
+  test("DOES accept strings, sequence to the 8th term is [0, 1, 1, 2, 3, 5, 8, 13]", () => {
+    expect(fibonacciGrp.fibsIterative03("8")).toEqual([
+      0, 1, 1, 2, 3, 5, 8, 13,
+    ]);
+  });
+  test("Sequence to the 3rd term is [0, 1, 1]", () => {
+    expect(fibonacciGrp.fibsIterative03(3)).toEqual([0, 1, 1]);
+  });
+});
+
 describe("fibonacci nth term using recursion", () => {
   test("4th fibonacci number is 3", () => {
     expect(fibonacciGrp.fibonacciTerm(4)).toBe(3);
