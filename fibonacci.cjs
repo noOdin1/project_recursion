@@ -213,7 +213,7 @@ const fibonacciGrp = {
     );
   };
 
-  if (process.argv.length > 1) {
+  if (process.argv.length > 2) {
     if (fibonacciGrp[f2Exe]()) {
       performance02();
       performance01();
